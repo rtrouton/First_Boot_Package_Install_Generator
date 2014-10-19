@@ -189,3 +189,7 @@ H: Once installation has finished, **/var/fb_installers** is deleted
 I: The Mac is restarted
 
 J: On restart, the “**if /var/fb_installers is not found**” actions occur and all remaining traces of the first boot package are removed from the Mac.
+
+See this link for blog posts about **First Boot Package Install Generator.app**:
+
+[http://derflounder.wordpress.com/category/first-boot-package-install-generator/](http://derflounder.wordpress.com/category/first-boot-package-install-generator/)
