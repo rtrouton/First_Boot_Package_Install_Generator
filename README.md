@@ -69,7 +69,7 @@ Once the package name, package identifier, package version and software update c
 ***How First Boot Package Install Generator.app works***
 
 
-**First Boot Package Install Generator.app** is an Automator application that uses AppleScript, shell scripting,  **pkgbuild** and **productbuild** behind the scenes to create payload-free packages. When a script is selected, the following process takes place:
+**First Boot Package Install Generator.app** is an Automator application that uses AppleScript, shell scripting,  **pkgbuild** and **productbuild** behind the scenes to create installer packages that are designed to serve as a delivery mechanism to install other packages during a Mac's startup process. When a script is selected, the following process takes place:
 
 1. The directory with the user-selected packages is copied to **/tmp** as a zip archive named **fb_installers**, to give the package-building script a consistent value to work with.
 
