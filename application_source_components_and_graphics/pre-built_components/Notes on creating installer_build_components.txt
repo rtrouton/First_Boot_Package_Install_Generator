@@ -1,0 +1,3 @@
+Run this command with root privileges to create the installer_build_components.tgz tar archive:
+
+tar -cvpzf installer_build_components.tgz Library private
