@@ -15,6 +15,7 @@ First Boot Package Install Generator.app
 
 **10.10.x**
 
+**10.11.x**
 
 **First Boot Package Install Generator.app** has been tested and verified that it does not run on the following version of OS X:
 
