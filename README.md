@@ -9,15 +9,16 @@ First Boot Package Install Generator.app
 
 **First Boot Package Install Generator.app** has been tested and verified to run on the following versions of OS X:
 
-**10.8.x**
-
 **10.9.x**
 
 **10.10.x**
 
 **10.11.x**
 
+
 **First Boot Package Install Generator.app** has been tested and verified that it does not run on the following version of OS X:
+
+**10.8.x**
 
 **10.7.x**
 
