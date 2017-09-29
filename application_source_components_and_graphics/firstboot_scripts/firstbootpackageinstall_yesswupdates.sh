@@ -227,7 +227,7 @@ if [[ -d "$install_dir" ]]; then
  
   # read all installer names into an array
 
-  install=($(/usr/bin/find "$install_dir" -maxdepth 2 \( -iname \*\.pkg -o -iname \*\.mpkg \)))
+  install=($(/usr/bin/find -s "$install_dir" -maxdepth 2 \( -iname \*\.pkg -o -iname \*\.mpkg \)))
  
   # restore IFS to previous state
 
