@@ -9,7 +9,9 @@ First Boot Package Install Generator.app
 
 The current release of **First Boot Package Install Generator.app** has been tested and verified to run on the following versions of macOS:
 
-**10.13.4**
+**10.14.0**
+
+**10.13.6**
 
 **10.12.6**
 
