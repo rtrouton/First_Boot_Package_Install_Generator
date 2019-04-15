@@ -1,0 +1,29 @@
+When updating the app, the following components may need to be code-signed:
+
+xmlstarlet:
+
+codesign --force --options runtime --deep --sign "Developer ID Application: Name Here (YG45FDT45F)" "/path/to/xml"
+
+
+LoginLog:
+
+codesign --force --options runtime --deep --entitlements=/path/to/LoginLog_entitlement/entitlements.plist --sign "Developer ID Application: Name Here (YG45FDT45F)" "/path/to/LoginLog.app"
+
+
+First Boot Package Install Generator.app:
+
+codesign --force --options runtime --deep --entitlements=/path/to/LoginLog_entitlement/entitlements.plist --sign "Developer ID Application: Name Here (YG45FDT45F)" "/path/to/First Boot Package Install Generator.app"
+
+
+
+Once signed, zip up First Boot Package Install Generator.app and notarize it:
+
+xcrun altool --notarize-app --primary-bundle-id "com.apple.automator.FirstBootPackageInstallGenerator" --username "adc_appleid_here" --password "adc_appleid_one_time_password_here" --file "/path/to/First Boot Package Install Generator.zip"
+
+Following a successful notarization, staple the notarization to First Boot Package Install Generator.app:
+
+xcrun stapler staple "/path/to/First Boot Package Install Generator.app"
+
+Validate notarization once stapled:
+
+stapler validate -v "/path/to/First Boot Package Install Generator.app"
