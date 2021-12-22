@@ -11,4 +11,11 @@ if [[ -e "/tmp/xmlstarlet.tgz" ]]; then
 fi
 
 cp "$1/Contents/Resources/installer_build_components.tgz" "/tmp/installer_build_components.tgz"
-cp "$1/Contents/Resources/xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"
+
+processor=$(/usr/sbin/sysctl -n machdep.cpu.brand_string | grep -o "Intel")
+
+if [[ -n "$processor" ]]; then
+   cp "$1/Contents/Resources/intel_xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"
+else
+   cp "$1/Contents/Resources/applesilicon_xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"
+fi

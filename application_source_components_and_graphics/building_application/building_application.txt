@@ -3,19 +3,20 @@ Once you have created the Automator application, you will need to do the followi
 1. Add the following to First Boot Package Install Generator.app/Contents/Resources:
 
 * application_source_components_and_graphics/pre-built_components/installer_build_components.tgz
-* application_source_components_and_graphics/pre-built_components/xmlstarlet.tgz
+* application_source_components_and_graphics/pre-built_components/intel_xmlstarlet.tgz
+* application_source_components_and_graphics/pre-built_components/applesilicon_xmlstarlet.tgz
 
 2. Unzip the following files:
 
 * application_source_components_and_graphics/icon/folder_icon.zip
 * application_source_components_and_graphics/icon/application_icons.zip
 
-3. Give the Automator application the First Boot Package Install Generator.app folder icon.
+3. Go into First Boot Package Install Generator.app/Contents/Resources and remove the following file:
 
-4. Go into First Boot Package Install Generator.app/Contents/Resources and remove the following file:
+ApplicationStub.icns
 
-AutomatorApplet.icns
+4. Rename the unzipped application_icons.zip file to be ApplicationStub.icns and copy it to First Boot Package Install Generator.app/Contents/Resources.
 
-5. Rename the unzipped application_icons.zip file to be AutomatorApplet.icns and copy it to First Boot Package Install Generator.app/Contents/Resources.
+5. Open First Boot Package Install Generator.app/Contents/Info.plist and change the CFBundleShortVersionString key's value to whatever the current version number is (currently 1.9)
 
 6. Create a new installer package for First Boot Package Install Generator.app by using Simple Package Creator.app.

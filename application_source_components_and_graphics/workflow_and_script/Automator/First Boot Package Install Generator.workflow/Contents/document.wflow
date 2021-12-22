@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>417</string>
+	<string>512</string>
 	<key>AMApplicationVersion</key>
-	<string>2.6</string>
+	<string>2.10</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -105,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:248.000000</string>
+				<string>385.500000:247.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -174,7 +174,14 @@ if [[ -e "/tmp/xmlstarlet.tgz" ]]; then
 fi
 
 cp "$1/Contents/Resources/installer_build_components.tgz" "/tmp/installer_build_components.tgz"
-cp "$1/Contents/Resources/xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"</string>
+
+processor=$(/usr/sbin/sysctl -n machdep.cpu.brand_string | grep -o "Intel")
+
+if [[ -n "$processor" ]]; then
+   cp "$1/Contents/Resources/intel_xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"
+else
+   cp "$1/Contents/Resources/applesilicon_xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"
+fi</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -234,9 +241,9 @@ cp "$1/Contents/Resources/xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"</string>
 					<key>1</key>
 					<dict>
 						<key>default value</key>
-						<string></string>
+						<false/>
 						<key>name</key>
-						<string>source</string>
+						<string>CheckedForUserDefaultShell</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -247,9 +254,9 @@ cp "$1/Contents/Resources/xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"</string>
 					<key>2</key>
 					<dict>
 						<key>default value</key>
-						<false/>
+						<string></string>
 						<key>name</key>
-						<string>CheckedForUserDefaultShell</string>
+						<string>source</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -287,9 +294,9 @@ cp "$1/Contents/Resources/xmlstarlet.tgz" "/tmp/xmlstarlet.tgz"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:431.000000</string>
+				<string>385.500000:590.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -389,7 +396,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:677.000000</string>
+				<string>385.500000:835.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -491,7 +498,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:923.000000</string>
+				<string>385.500000:1080.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -600,9 +607,9 @@ end run</string>
 					<key>0</key>
 					<dict>
 						<key>default value</key>
-						<false/>
+						<integer>0</integer>
 						<key>name</key>
-						<string>multipleSelection</string>
+						<string>granularity</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -613,9 +620,9 @@ end run</string>
 					<key>1</key>
 					<dict>
 						<key>default value</key>
-						<integer>0</integer>
+						<false/>
 						<key>name</key>
-						<string>granularity</string>
+						<string>multipleSelection</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -653,7 +660,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:1079.000000</string>
+				<string>385.500000:1231.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -775,7 +782,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:1182.000000</string>
+				<string>385.500000:1331.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Copy Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1249,7 +1256,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:1342.000000</string>
+				<string>385.500000:1488.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1353,7 +1360,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:1588.000000</string>
+				<string>385.500000:1733.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1363,54 +1370,54 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0A4F01F3-C8D0-4F78-90DF-913DF935730C</key>
+		<key>2262ACC2-3E0E-47A9-BB49-E9E5CCEAC667</key>
 		<dict>
 			<key>from</key>
-			<string>E947A45D-3891-4BF0-AE8A-8A323EAA89ED - E947A45D-3891-4BF0-AE8A-8A323EAA89ED</string>
+			<string>6DEF0991-F8CD-4A17-BBDA-183667374E87 - 6DEF0991-F8CD-4A17-BBDA-183667374E87</string>
 			<key>to</key>
-			<string>C104F5DA-732F-4D58-94B4-6957D0165299 - C104F5DA-732F-4D58-94B4-6957D0165299</string>
-		</dict>
-		<key>2B859175-D5E2-43C2-BD26-DB14CC62176B</key>
-		<dict>
-			<key>from</key>
 			<string>BE30C015-52AF-45A1-9B17-BE44451A189E - BE30C015-52AF-45A1-9B17-BE44451A189E</string>
-			<key>to</key>
-			<string>B493907F-C276-4372-A53A-B4895126D5FC - B493907F-C276-4372-A53A-B4895126D5FC</string>
 		</dict>
-		<key>599B792D-DDD6-45F7-AFA8-E8189C665A06</key>
-		<dict>
-			<key>from</key>
-			<string>DC9C1C47-12AD-4209-8F6B-5C05E57A6A83 - DC9C1C47-12AD-4209-8F6B-5C05E57A6A83</string>
-			<key>to</key>
-			<string>E947A45D-3891-4BF0-AE8A-8A323EAA89ED - E947A45D-3891-4BF0-AE8A-8A323EAA89ED</string>
-		</dict>
-		<key>71713533-A731-4BAB-8BB6-EB09A6B9122B</key>
-		<dict>
-			<key>from</key>
-			<string>B493907F-C276-4372-A53A-B4895126D5FC - B493907F-C276-4372-A53A-B4895126D5FC</string>
-			<key>to</key>
-			<string>DC9C1C47-12AD-4209-8F6B-5C05E57A6A83 - DC9C1C47-12AD-4209-8F6B-5C05E57A6A83</string>
-		</dict>
-		<key>884B092B-18F1-40C5-9557-B7D5E26BE46C</key>
+		<key>35E7FF5C-83DD-4588-AF91-99928C343E26</key>
 		<dict>
 			<key>from</key>
 			<string>C104F5DA-732F-4D58-94B4-6957D0165299 - C104F5DA-732F-4D58-94B4-6957D0165299</string>
 			<key>to</key>
 			<string>71B51407-6411-405C-8FC2-40EFB023A0CE - 71B51407-6411-405C-8FC2-40EFB023A0CE</string>
 		</dict>
-		<key>DD7BCD27-8C81-4F16-B57D-1742A16E5BC5</key>
-		<dict>
-			<key>from</key>
-			<string>6DEF0991-F8CD-4A17-BBDA-183667374E87 - 6DEF0991-F8CD-4A17-BBDA-183667374E87</string>
-			<key>to</key>
-			<string>BE30C015-52AF-45A1-9B17-BE44451A189E - BE30C015-52AF-45A1-9B17-BE44451A189E</string>
-		</dict>
-		<key>F940B20D-C0BB-4D25-B4BA-AC51C73DAC19</key>
+		<key>3740FEA2-88DA-46CD-96AB-6A89019F4244</key>
 		<dict>
 			<key>from</key>
 			<string>C7C40BB2-0969-42AF-9E9D-2EE60ABD135A - C7C40BB2-0969-42AF-9E9D-2EE60ABD135A</string>
 			<key>to</key>
 			<string>6DEF0991-F8CD-4A17-BBDA-183667374E87 - 6DEF0991-F8CD-4A17-BBDA-183667374E87</string>
+		</dict>
+		<key>3BC9A761-0361-45BF-AEBD-AFA41543AAF7</key>
+		<dict>
+			<key>from</key>
+			<string>DC9C1C47-12AD-4209-8F6B-5C05E57A6A83 - DC9C1C47-12AD-4209-8F6B-5C05E57A6A83</string>
+			<key>to</key>
+			<string>E947A45D-3891-4BF0-AE8A-8A323EAA89ED - E947A45D-3891-4BF0-AE8A-8A323EAA89ED</string>
+		</dict>
+		<key>41517C55-A230-4425-A059-5A864E50CA13</key>
+		<dict>
+			<key>from</key>
+			<string>E947A45D-3891-4BF0-AE8A-8A323EAA89ED - E947A45D-3891-4BF0-AE8A-8A323EAA89ED</string>
+			<key>to</key>
+			<string>C104F5DA-732F-4D58-94B4-6957D0165299 - C104F5DA-732F-4D58-94B4-6957D0165299</string>
+		</dict>
+		<key>4415D7FE-89EC-42FD-87E6-8B5D2F34BFFF</key>
+		<dict>
+			<key>from</key>
+			<string>B493907F-C276-4372-A53A-B4895126D5FC - B493907F-C276-4372-A53A-B4895126D5FC</string>
+			<key>to</key>
+			<string>DC9C1C47-12AD-4209-8F6B-5C05E57A6A83 - DC9C1C47-12AD-4209-8F6B-5C05E57A6A83</string>
+		</dict>
+		<key>AAF6BC2D-C541-48B2-BBC4-3C0666EBB1C9</key>
+		<dict>
+			<key>from</key>
+			<string>BE30C015-52AF-45A1-9B17-BE44451A189E - BE30C015-52AF-45A1-9B17-BE44451A189E</string>
+			<key>to</key>
+			<string>B493907F-C276-4372-A53A-B4895126D5FC - B493907F-C276-4372-A53A-B4895126D5FC</string>
 		</dict>
 	</dict>
 	<key>variables</key>

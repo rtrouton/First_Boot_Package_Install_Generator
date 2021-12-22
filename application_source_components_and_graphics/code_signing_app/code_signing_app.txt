@@ -5,14 +5,9 @@ xmlstarlet:
 codesign --force --options runtime --deep --sign "Developer ID Application: Name Here (YG45FDT45F)" "/path/to/xml"
 
 
-LoginLog:
-
-codesign --force --options runtime --deep --entitlements=/path/to/LoginLog_entitlement/entitlements.plist --sign "Developer ID Application: Name Here (YG45FDT45F)" "/path/to/LoginLog.app"
-
-
 First Boot Package Install Generator.app:
 
-codesign --force --options runtime --deep --entitlements=/path/to/LoginLog_entitlement/entitlements.plist --sign "Developer ID Application: Name Here (YG45FDT45F)" "/path/to/First Boot Package Install Generator.app"
+codesign --force --options runtime --deep --sign "Developer ID Application: Name Here (YG45FDT45F)" "/path/to/First Boot Package Install Generator.app"
 
 
 
